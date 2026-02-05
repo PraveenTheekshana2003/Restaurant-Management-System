@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Premium Light Theme Variables */
+:root {
+    /* Backgrounds - Warm & Clean */
+    --bg-primary: #ffffff;
+    --bg-secondary: #fdfafa;
+    /* Very subtle warm white */
+    --bg-tertiary: #f3f4f6;
+
+    /* Text - High Contrast */
+    --text-primary: #1a1a1a;
+    --text-secondary: #4b5563;
+    --text-tertiary: #9ca3af;
+
+    /* Brand Colors - Red & Orange Theme */
+    --brand-red: #DC2626;
+    /* Primary Action */
+    --brand-red-dark: #B91C1C;
+    --brand-red-light: #FEF2F2;
+
+    --brand-orange: #F97316;
+    /* Secondary / Highlight */
+    --brand-orange-light: #FFF7ED;
+    --brand-orange-vibrant: #FB923C;
+
+    /* Green for Price Tags */
+    --brand-green: #22c55e;
+    --brand-green-light: #dcfce7;
+    --brand-green-dark: #15803d;
+
+    /* UI Elements */
+    --border-color: #e5e7eb;
+    --border-highlight: #fed7aa;
+    /* Subtle orange border */
+
+    /* Premium Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-hover: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--brand-orange);
+    border-radius: 5px;
+    border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--brand-red);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Glassmorphism Utilities */
+@layer utilities {
+    .glass-panel {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .card-hover {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .card-hover:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-hover);
+        border-color: var(--brand-orange-vibrant);
+    }
+}
